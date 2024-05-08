@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">NutriMotion</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="update_profile_details">Update Profile Details ✎</string>
 </resources>

@@ -21,4 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
             return insets;
         });
     }
+    public void onClick(android.view.View view) {
+        // Handle button click
+    }
 }
