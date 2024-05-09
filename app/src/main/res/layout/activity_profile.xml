@@ -14,43 +14,41 @@
         android:id="@+id/update_profile_btn"
         style="@style/RoundedButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_height="40sp"
+        android:layout_marginTop="170dp"
         android:background="@drawable/profile_update_button"
         android:text="@string/update_profile_details"
-        android:textSize="12sp"
+        android:textSize="10sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
+        android:elevation="8dp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
+        style="@style/GlobalTextView"
         android:id="@+id/settingsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="30dp"
         android:text="Account Settings"
-        android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/update_profile_btn"
-        app:layout_constraintRight_toRightOf="@+id/update_profile_btn"
+        app:layout_constraintLeft_toLeftOf="@id/profileImage"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="26dp" />
 
     <TextView
+        style="@style/GlobalTextView"
         android:id="@+id/textAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
         android:text="Account"
-        android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"
         tools:layout_editor_absoluteX="17dp"
         tools:layout_editor_absoluteY="80dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -58,7 +56,7 @@
         tools:ignore="MissingConstraints"/>
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileImage"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/placeholder_image"
@@ -70,4 +68,111 @@
         app:shapeAppearanceOverlay="@style/CircleProfileImage"
         app:layout_constraintTop_toBottomOf="@id/textAccount"
         app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        style="@style/GlobalTextView"
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JohnSmith@outlook.com"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="100dp"
+        app:layout_constraintLeft_toRightOf="@id/profileImage"
+        app:layout_constraintTop_toBottomOf="@id/textAccount" />
+
+    <TextView
+        style="@style/GlobalTextView"
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Smith"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="135dp"
+        app:layout_constraintLeft_toRightOf="@id/profileImage"
+        app:layout_constraintTop_toBottomOf="@id/textAccount"/>
+
+    <TextView
+        android:id="@+id/kcalAllTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All time Calories"
+        android:textColor="#D3D3D3"
+        android:textSize="12sp"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="80dp"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="212dp"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/followersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Followers"
+        android:textColor="#D3D3D3"
+        android:textSize="12sp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="80dp"
+        tools:layout_editor_absoluteX="197dp"
+        tools:layout_editor_absoluteY="228dp"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        style="@style/GlobalTextView"
+        android:id="@+id/kcalNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12,345"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="203dp"
+        app:layout_constraintBottom_toTopOf="@id/kcalAllTime"
+        app:layout_constraintLeft_toLeftOf="@id/kcalAllTime"
+        app:layout_constraintRight_toRightOf="@id/kcalAllTime"
+        />
+
+    <TextView
+        style="@style/GlobalTextView"
+        android:id="@+id/followerNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="682"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="207dp"
+        app:layout_constraintBottom_toTopOf="@id/followersText"
+        app:layout_constraintLeft_toLeftOf="@id/followersText"
+        app:layout_constraintRight_toRightOf="@id/followersText"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/kcal_icon"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="144dp"
+        app:layout_constraintBottom_toTopOf="@id/kcalNumber"
+        app:layout_constraintLeft_toLeftOf="@id/kcalNumber"
+        app:layout_constraintRight_toRightOf="@id/kcalNumber"
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/follow_icon"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="111dp"
+        app:layout_constraintBottom_toTopOf="@id/followerNumber"
+        app:layout_constraintLeft_toLeftOf="@id/followerNumber"
+        app:layout_constraintRight_toRightOf="@id/followerNumber"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,15 @@
         <item name="android:background">@drawable/rounded_button</item>
         <item name="android:backgroundTint">@null</item>
     </style>
+
     <style name="CircleProfileImage" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="GlobalTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
