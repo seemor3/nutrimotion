@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="onClick"
+    android:onClick="onClickUpdateDetails"
     android:background="@drawable/background"
     android:padding="16dp"
     tools:context=".ProfileActivity">
@@ -15,15 +15,16 @@
         style="@style/RoundedButton"
         android:layout_width="wrap_content"
         android:layout_height="40sp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/profile_update_button"
         android:text="@string/update_profile_details"
-        android:textSize="10sp"
+        android:textSize="14sp"
         android:textStyle="bold"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:elevation="8dp"
         app:backgroundTint="@null"
-        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintTop_toBottomOf="@id/kcalAllTime"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
@@ -55,8 +56,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileImage"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/placeholder_image"
         android:foreground="@drawable/profile_round"
         android:scaleType="centerCrop"
@@ -73,10 +74,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JohnSmith@outlook.com"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:textSize="12sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintLeft_toRightOf="@id/profileImage"
-        app:layout_constraintTop_toBottomOf="@id/textAccount" />
+        app:layout_constraintBottom_toBottomOf="@id/profileImage" />
 
     <TextView
         style="@style/GlobalTextView"
@@ -84,10 +86,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="John Smith"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toRightOf="@id/profileImage"
-        app:layout_constraintTop_toBottomOf="@id/textAccount"/>
+        app:layout_constraintTop_toTopOf="@id/profileImage"/>
 
     <TextView
         android:id="@+id/kcalAllTime"
@@ -95,7 +98,7 @@
         android:layout_height="wrap_content"
         android:text="All time Calories"
         android:textColor="#D3D3D3"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:layout_marginTop="70dp"
         android:layout_marginStart="80dp"
         app:layout_constraintTop_toBottomOf="@id/profileImage"
@@ -108,7 +111,7 @@
         android:layout_height="wrap_content"
         android:text="Followers"
         android:textColor="#D3D3D3"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:layout_marginTop="70dp"
         android:layout_marginRight="80dp"
         app:layout_constraintTop_toBottomOf="@id/profileImage"
@@ -121,6 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="12,345"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/kcalAllTime"
         app:layout_constraintLeft_toLeftOf="@id/kcalAllTime"
         app:layout_constraintRight_toRightOf="@id/kcalAllTime"
@@ -132,6 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="682"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/followersText"
         app:layout_constraintLeft_toLeftOf="@id/followersText"
         app:layout_constraintRight_toRightOf="@id/followersText"
@@ -156,13 +161,133 @@
         app:layout_constraintLeft_toLeftOf="@id/followerNumber"
         app:layout_constraintRight_toRightOf="@id/followerNumber"
         />
-
+    <!-- Notification segment -->
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/notif_RelLayout"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:onClick="onClickNotifSettings"
+        android:background="@drawable/rel_layout_background"
         app:layout_constraintTop_toBottomOf="@id/settingsText"
+        app:layout_constraintLeft_toLeftOf="@id/profileImage">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/notif_VecImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/notif_icon"
+            android:background="@drawable/background_icon"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:id="@+id/notif_Text"
+            style="@style/GlobalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/notif_VecImg"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:text="Notification Settings"
+            android:textSize="18sp"/>
+        <ImageView
+            android:id="@+id/notif_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_arrowhead"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <!-- Password segment -->
+    <RelativeLayout
+        android:id="@+id/pass_RelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:onClick="onClickChangePass"
+        android:background="@drawable/rel_layout_background"
+        app:layout_constraintTop_toBottomOf="@id/notif_RelLayout"
+        app:layout_constraintLeft_toLeftOf="@id/profileImage">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pass_VecImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pass_icon"
+            android:background="@drawable/background_icon"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:id="@+id/pass_Text"
+            style="@style/GlobalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/pass_VecImg"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:text="Change your Password"
+            android:textSize="18sp"/>
+        <ImageView
+            android:id="@+id/pass_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_arrowhead"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <!-- FAQ segment -->
+    <RelativeLayout
+        android:id="@+id/faq_RelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:onClick="onClickFAQ"
+        android:background="@drawable/rel_layout_background"
+        app:layout_constraintTop_toBottomOf="@id/pass_RelLayout"
+        app:layout_constraintLeft_toLeftOf="@id/profileImage">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/faq_vecImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/faq_icon"
+            android:background="@drawable/background_icon"
+            android:scaleType="centerInside"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:id="@+id/faq_text"
+            style="@style/GlobalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/faq_vecImg"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:text="FAQ's"
+            android:textSize="18sp"
+            />
+        <ImageView
+            android:id="@+id/faq_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/right_arrowhead"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <!-- Privacy segment -->
+    <RelativeLayout
+        android:id="@+id/privacy_RelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintTop_toBottomOf="@id/faq_RelLayout"
         app:layout_constraintLeft_toLeftOf="@id/profileImage">
 
         <!-- Set your desired width and height -->
@@ -180,21 +305,20 @@
             style="@style/GlobalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/privacy_icon"
+            android:layout_toEndOf="@+id/privacy_icon"
             android:layout_centerInParent="true"
             android:layout_marginStart="20dp"
             android:text="Private profile"
-            android:textSize="16dp"/>
+            android:textSize="18sp"/>
 
         <Switch
             android:id="@+id/privacy_tog"
-            style="@style/GlobalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
+            android:layout_toEndOf="@+id/privacy_text"
             android:layout_centerInParent="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
