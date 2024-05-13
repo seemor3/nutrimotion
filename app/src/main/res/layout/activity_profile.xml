@@ -58,7 +58,7 @@
         android:id="@+id/profileImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/placeholder_image"
+        android:src="@drawable/profile_placeholder_image"
         android:foreground="@drawable/profile_round"
         android:scaleType="centerCrop"
         android:layout_marginTop="20dp"
@@ -146,7 +146,7 @@
         android:id="@+id/kcalVecImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/kcal_icon"
+        app:srcCompat="@drawable/profile_kcal_icon"
         app:layout_constraintBottom_toTopOf="@id/kcalNumber"
         app:layout_constraintLeft_toLeftOf="@id/kcalNumber"
         app:layout_constraintRight_toRightOf="@id/kcalNumber"
@@ -156,7 +156,7 @@
         android:id="@+id/followVecImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/follow_icon"
+        app:srcCompat="@drawable/profile_follow_icon"
         app:layout_constraintBottom_toTopOf="@id/followerNumber"
         app:layout_constraintLeft_toLeftOf="@id/followerNumber"
         app:layout_constraintRight_toRightOf="@id/followerNumber"
@@ -178,8 +178,8 @@
             android:id="@+id/notif_VecImg"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/notif_icon"
-            android:background="@drawable/background_icon"
+            android:src="@drawable/profile_notif_icon"
+            android:background="@drawable/profile_background_icon"
             android:scaleType="centerInside"
             android:layout_centerVertical="true" />
         <TextView
@@ -196,7 +196,7 @@
             android:id="@+id/notif_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/right_arrowhead"
+            android:src="@drawable/profile_right_arrowhead"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
@@ -217,8 +217,8 @@
             android:id="@+id/pass_VecImg"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/pass_icon"
-            android:background="@drawable/background_icon"
+            android:src="@drawable/profile_pass_icon"
+            android:background="@drawable/profile_background_icon"
             android:scaleType="centerInside"
             android:layout_centerVertical="true" />
         <TextView
@@ -235,7 +235,7 @@
             android:id="@+id/pass_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/right_arrowhead"
+            android:src="@drawable/profile_right_arrowhead"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
@@ -256,8 +256,8 @@
             android:id="@+id/faq_vecImg"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/faq_icon"
-            android:background="@drawable/background_icon"
+            android:src="@drawable/profile_faq_icon"
+            android:background="@drawable/profile_background_icon"
             android:scaleType="centerInside"
             android:layout_centerVertical="true" />
         <TextView
@@ -275,7 +275,7 @@
             android:id="@+id/faq_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/right_arrowhead"
+            android:src="@drawable/profile_right_arrowhead"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"/>
     </RelativeLayout>
@@ -295,8 +295,8 @@
             android:id="@+id/privacy_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/lock_icon"
-            android:background="@drawable/background_icon"
+            android:src="@drawable/profile_lock_icon"
+            android:background="@drawable/profile_background_icon"
             android:scaleType="centerInside"
             android:layout_centerVertical="true" />
 
